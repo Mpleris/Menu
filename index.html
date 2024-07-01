@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasty Delights</title>
+    <title>Restaurant Menu</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #343a40;
         }
         h1 {
@@ -33,6 +33,10 @@
             margin-top: 1.5rem;
             border-bottom: 2px solid #343a40;
             padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
         }
         .menu-section {
             margin-bottom: 2rem;
@@ -66,38 +70,85 @@
 </head>
 <body>
     <header>
-        <h1>Tasty Delights</h1>
+        <h1>Restaurant Menu</h1>
         <p>Διεύθυνση: Οδός Παραδείσου 123, Αθήνα</p>
         <p>Τηλέφωνο: 210 1234567</p>
         <p>Ώρες λειτουργίας: 12:00 - 23:00</p>
     </header>
     <div class="container">
-        <h2>Μενού</h2>
         <div class="menu-section">
-            <h3>Ορεκτικά</h3>
+            <h2>Σαλάτες</h2>
             <div class="menu-item">
-                <strong>Τζατζίκι - €3.50</strong>
-                <p>Παραδοσιακή ελληνική σάλτσα με γιαούρτι, σκόρδο και αγγούρι.</p>
+                <strong>Κρητική Σαλάτα - €9.90</strong>
+                <p>Ντομάτα, αγγούρι, πιπεριά, κρεμμύδι, κρίταμο, φέτα, και κρίθινα παξιμάδια</p>
             </div>
             <div class="menu-item">
-                <strong>Φέτα με μέλι - €5.00</strong>
-                <p>Ψητή φέτα με μέλι και σουσάμι.</p>
+                <strong>Σαλάτα Ορμύλια - €9.20</strong>
+                <p>Σαλάτα με ρόκα, λάδι, αυγά, κρεμμύδι, και τυρί μανούρι</p>
             </div>
+            <!-- Προσθήκη των υπόλοιπων σαλατών εδώ -->
         </div>
+
         <div class="menu-section">
-            <h3>Κυρίως Πιάτα</h3>
+            <h2>Ορεκτικά</h2>
             <div class="menu-item">
-                <strong>Μουσακάς - €8.50</strong>
-                <p>Παραδοσιακό ελληνικό πιάτο με μελιτζάνες, πατάτες και κιμά.</p>
+                <strong>Ψητά Λαχανικά - €6.20</strong>
+                <p>Ψητά λαχανικά με ζεστό φέτα</p>
             </div>
             <div class="menu-item">
-                <strong>Σουβλάκι - €6.00</strong>
-                <p>Κλασικό ελληνικό σουβλάκι με πίτα, ντομάτα, κρεμμύδι και τζατζίκι.</p>
+                <strong>Ντάκος Κρητικός - €7.00</strong>
+                <p>Κρίθινο παξιμάδι, ντομάτα, ελαιόλαδο, τυρί, κάππαρη, και ρίγανη</p>
             </div>
+            <!-- Προσθήκη των υπόλοιπων ορεκτικών εδώ -->
+        </div>
+
+        <div class="menu-section">
+            <h2>Κάτι να γλυκαθεί</h2>
+            <div class="menu-item">
+                <strong>Τσιζκέικ - €4.80</strong>
+                <p>Γλυκό τυρί με μπισκότο και μαρμελάδα</p>
+            </div>
+            <!-- Προσθήκη των υπόλοιπων γλυκών εδώ -->
+        </div>
+
+        <div class="menu-section">
+            <h2>Τυριά</h2>
+            <div class="menu-item">
+                <strong>Μέλι & Φέτα - €5.70</strong>
+                <p>Φέτα με μέλι και καρύδια</p>
+            </div>
+            <!-- Προσθήκη των υπόλοιπων τυριών εδώ -->
+        </div>
+
+        <div class="menu-section">
+            <h2>Ζυμαρικά</h2>
+            <div class="menu-item">
+                <strong>Μακαρόνια Σκιουφιχτά - €12.80</strong>
+                <p>Με σάλτσα ντομάτας και φέτα</p>
+            </div>
+            <!-- Προσθήκη των υπόλοιπων ζυμαρικών εδώ -->
+        </div>
+
+        <div class="menu-section">
+            <h2>Κρεατολιχουδιές</h2>
+            <div class="menu-item">
+                <strong>Φτερούγες κοτόπουλο - €8.40</strong>
+                <p>Φτερούγες κοτόπουλο με σως BBQ</p>
+            </div>
+            <!-- Προσθήκη των υπόλοιπων κρεατολιχουδιών εδώ -->
+        </div>
+
+        <div class="menu-section">
+            <h2>Τα κάρβουνα ανάψαν</h2>
+            <div class="menu-item">
+                <strong>Σχάρα χοιρινή μπριζόλα - €17.00</strong>
+                <p>Σχάρα χοιρινή μπριζόλα με γαρνιτούρα</p>
+            </div>
+            <!-- Προσθήκη των υπόλοιπων πιάτων σχάρας εδώ -->
         </div>
     </div>
     <footer>
-        <p>© 2024 Tasty Delights</p>
+        <p>© 2024 Restaurant Name</p>
     </footer>
 </body>
 </html>
