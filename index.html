@@ -4,23 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Μενού Εστιατορίου</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .menu-category {
+            margin-top: 20px;
+        }
+        .menu-category h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .menu-item {
+            margin: 10px 0;
+        }
+        .menu-item span {
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <h1>Μενού Εστιατορίου</h1>
-    <h2>Σαλάτες</h2>
-    <ul>
-        <li>Κρητική Σαλάτα - 9,90€</li>
-        <li>Σαλάτα Θρούμπη - 9,70€</li>
-        <li>Σαλάτα Ρόκα - 9,80€</li>
-        <!-- Προσθέστε τις υπόλοιπες σαλάτες στο μενού σας -->
-    </ul>
-    <h2>Κρεατολιχουδιές</h2>
-    <ul>
-        <li>Φτερούγες κοτόπουλο - 180€</li>
-        <li>Ρολάκια κοτόπουλου - 9,90€</li>
-        <li>Φλογέρες κοτόπουλο - 9,90€</li>
-        <!-- Προσθέστε τις υπόλοιπες κρεατολιχουδιές στο μενού σας -->
-    </ul>
-    <!-- Προσθέστε τις υπόλοιπες κατηγορίες στο μενού σας -->
+    <div id="menu"></div>
+
+    <script>
+        const menuData = [
+            {
+                category: 'Σαλάτες',
+                items: [
+                    { name: 'Κρητική Σαλάτα', description: 'ντομάτα, αγγούρι, πιπεριά, κρεμμύδι...', price: '9,30' },
+                    { name: 'Σαλάτα Θουρίδα', description: 'μαρούλι iceberg, ρόκα, ντομάτα...', price: '9,20' },
+                    { name: 'Σαλάτα Ρόκα', description: 'ρόκα, παρμεζάνα, καρύδια...', price: '9,50' },
+                    { name: 'Σαλάτα Κυκλά', description: '3 τυριά, ντομάτα, αγγουράκι...', price: '9,90' },
+                    { name: 'Steak Salad', description: 'μαρούλι iceberg, ψημένο στα κάρβουνα...', price: '10,90' },
+                    { name: 'Αγριάννη Σαλάτα', description: 'μαρούλι iceberg, ρόκα...', price: '9,70' },
+                    { name: 'Χωριάτικη Σαλάτα', description: 'ντομάτα, αγγούρι, πιπεριά...', price: '9,90' },
+                    { name: 'Χάλκινη Σαλάτα', description: 'μαρούλι, σπανάκι...', price: '8,50' },
+                    { name: 'Σαλάτα Παντζάρι', description: 'παντζάρια, ξινόμηλο...', price: '8,50' },
+                    { name: 'Χαλούμι Σαλάτα', description: 'ψητό χαλούμι...', price: '8,50' }
+                ]
+            },
+            {
+                category: 'Ορεκτικά',
+                items: [
+                    { name: 'Ψητά Λαχανικά', description: 'κολοκύθι, μελιτζάνα...', price: '6,40' },
+                    { name: 'Πατάτες τηγανιτές', description: 'με αβγό και τυρί γραβιέρα', price: '6,90' },
+                    { name: 'Τυροκροκέτες', description: 'με σάλτσα γλυκιάς πιπεριάς', price: '7,00' },
+                    { name: 'Τηγανιτό χαλούμι', description: 'με μέλι', price: '7,20' },
+                    { name: 'Καλαμάρι σωτέ με τσουρέκι', description: 'σε αρωματικό λάδι', price: '8,20' },
+                    { name: 'Φρέσκες τηγανητές πατάτες', description: 'με αβγό και τυρί', price: '7,00' },
+                    { name: 'Κεμπάπ Αρμένικο', description: 'ψημένο στα κάρβουνα', price: '8,20' },
+                    { name: 'Κολοκυθοκεφτέδες', description: 'με σάλτσα γιαουρτιού', price: '7,10' },
+                    { name: 'Αυγά με πατάτες', description: 'πατάτες, καπνιστό μπέικον, αυγά', price: '8,50' },
+                    { name: 'Σαγανάκι μελιτζάνας', description: 'με χαλούμι και ντομάτα', price: '8,10' }
+                ]
+            },
+            // ... υπόλοιπες κατηγορίες και αντικείμενα ...
+        ];
+
+        function renderMenu(menuData) {
+            const menuContainer = document.getElementById('menu');
+
+            menuData.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'menu-category';
+
+                const categoryTitle = document.createElement('h2');
+                categoryTitle.textContent = category.category;
+                categoryDiv.appendChild(categoryTitle);
+
+                category.items.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'menu-item';
+
+                    const itemName = document.createElement('div');
+                    itemName.textContent = item.name;
+                    itemDiv.appendChild(itemName);
+
+                    const itemDescription = document.createElement('div');
+                    itemDescription.textContent = item.description;
+                    itemDiv.appendChild(itemDescription);
+
+                    const itemPrice = document.createElement('span');
+                    itemPrice.textContent = item.price;
+                    itemDiv.appendChild(itemPrice);
+
+                    categoryDiv.appendChild(itemDiv);
+                });
+
+                menuContainer.appendChild(categoryDiv);
+            });
+        }
+
+        renderMenu(menuData);
+    </script>
 </body>
 </html>
